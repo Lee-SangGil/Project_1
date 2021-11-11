@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/td/mybatis-3-mapper.dtd">
+<mapper namespace="m">
+	
+	<select id="login" resultType="member" parameterType="java.util.HashMap">
+		select * from moviemem where id = #{id} and pwd = #{pwd}
+	</select>
+	
+	<select id="idCheck" resultType="member" parameterType="java.lang.String">
+		select id from moviemem where id = #{id}
+	</select>
+	
+	<select id="newmember" parameterType="member">
+		insert into moviemem values(
+			#{ name },
+			#{ id },
+			#{ pwd },
+			#{ pnum },
+			#{ email }
+		)
+	</select>
+	
+	<select id="find_Id" resultType="member" parameterType="java.util.HashMap">
+		select id from moviemem where name = #{name} and pnum = #{pnum}
+	</select>
+	
+	<select id="find_pwd" resultType="member" parameterType="java.util.HashMap">
+		select pwd from moviemem where id = #{id} and name = #{name} and pnum = #{pnum}
+	</select>
+	
+	
+
+</mapper>
+
+
+
+
+

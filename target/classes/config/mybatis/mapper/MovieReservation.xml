@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mr">
+
+	<select id="movieone_list" resultType="movielist" parameterType="java.util.HashMap">
+	
+		select movietimelist from movielist where moviename = #{moviename} and movietheater = #{movietheater} and moviedate = #{moviedate}
+	
+	</select>
+	
+	<insert id="reservation_insert" parameterType="reservation">
+		insert into moviereservation values(
+			seq_moviereservation_idx.nextVal, 
+			#{ id }, 
+			#{ title }, 
+			#{ selectedTheater }, 
+			#{ reserveDate }, 
+			#{ runningTime }, 
+			#{ ticketNumber }, 
+			#{ selectedSeat }
+		)
+	</insert>
+	
+	<select id="mypage_list" resultType="reservation">
+	
+		select * from MOVIERESERVATION where id = #{ id }
+	
+	</select>
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

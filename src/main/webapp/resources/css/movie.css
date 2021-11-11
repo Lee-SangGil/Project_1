@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/*header 영역*/
+
+.header{
+	float: left;
+}
+
+/* main-body영역*/
+
+.body{	
+	background: #fdfcf0;
+}
+
+.img{
+	float : left;
+	margin: 40px;
+	
+}
